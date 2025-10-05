@@ -11,6 +11,16 @@ class Store
     private Environment $environment;
 
     /**
+     * @var string|null Bearer token obtained via OAuth2
+     */
+    private ?string $bearerToken = null;
+
+    /**
+     * @var int|null Epoch expiration of the token
+     */
+    private ?int $bearerTokenExpiresAt = null;
+
+    /**
      * Creates a store.
      *
      * @param string           $filiation
@@ -77,5 +87,35 @@ class Store
     {
         $this->token = $token;
         return $this;
+    }
+
+    /**
+     * Define the bearer token and the absolute expiration time (epoch).
+     *
+     * @param string $token
+     * @param int    $expiresAtEpoch
+     * @return $this
+     */
+    public function setBearerToken(string $token, int $expiresAtEpoch): static
+    {
+        $this->bearerToken = $token;
+        $this->bearerTokenExpiresAt = $expiresAtEpoch;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getBearerToken(): ?string
+    {
+        return $this->bearerToken;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getBearerTokenExpiresAt(): ?int
+    {
+        return $this->bearerTokenExpiresAt;
     }
 }
