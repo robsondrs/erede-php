@@ -1,6 +1,6 @@
 {
-  "name": "developersrede/erede-php",
-  "version": "5.2.1",
+  "name": "robsondrs/erede-php",
+  "version": "5.2.5",
   "description": "e.Rede integration SDK",
   "minimum-stability": "stable",
   "license": "MIT",
@@ -28,6 +28,10 @@
     {
       "name": "João Batista Neto",
       "email": "neto.joaobatista@gmail.com"
+    },
+    {
+      "name": "Robson Soares",
+      "email": "robson_drs@hotmail.com"
     }
   ]
 }
